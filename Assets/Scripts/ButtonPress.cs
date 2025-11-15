@@ -16,7 +16,7 @@ public class ButtonPress : MonoBehaviour
     {
         if (!isPressed)
         {
-        pressButton.transform.localPosition= new Vector3 (0,0.003f,0);
+        pressButton.transform.localPosition= new Vector3 (-1.702574e-10f,-0.001701512f,0.01476345f);
         presser=other.gameObject;
         onPress.Invoke();
         isPressed=true;    
@@ -27,7 +27,7 @@ public class ButtonPress : MonoBehaviour
     {
         if (other.gameObject==presser)
         {
-            pressButton.transform.localPosition= new Vector3 (0,0.015f,0);
+            pressButton.transform.localPosition= new Vector3 (-1.702574e-10f,-0.001701512f,0.02476345f);
             onRelease.Invoke();
             isPressed=false;
         }
