@@ -1,0 +1,80 @@
+﻿using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+
+public class LeverAutoReturn : MonoBehaviour
+{
+    public UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;
+    public float returnSpeed = 450f;
+    public float thresholdAngle = 60f;
+    public HingeJoint hinge;
+
+
+    private bool isGrabbed = false;
+    private Quaternion startRotation;
+    private bool shouldReturn;
+
+    private void Awake()
+    {
+        if (grabInteractable == null)
+            grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+
+        startRotation = transform.localRotation;
+
+        grabInteractable.selectEntered.AddListener(OnGrab);
+        grabInteractable.selectExited.AddListener(OnRelease);
+    }
+
+    private void OnDestroy()
+    {
+        grabInteractable.selectEntered.RemoveListener(OnGrab);
+        grabInteractable.selectExited.RemoveListener(OnRelease);
+    }
+
+    private void OnGrab(SelectEnterEventArgs args)
+    {
+        isGrabbed = true;
+    }
+
+    private void OnRelease(SelectExitEventArgs args)
+    {
+
+        isGrabbed = false;
+
+        float currentAngle;
+
+        if (hinge != null)
+        {
+            currentAngle = Mathf.Abs(hinge.angle);
+        }
+        else
+        {
+            currentAngle = Quaternion.Angle(startRotation, transform.localRotation);
+        }
+
+        if (currentAngle >= thresholdAngle)
+        {
+            shouldReturn = true;
+        }
+        else
+        {
+            shouldReturn = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (shouldReturn && !isGrabbed)
+        {
+            transform.localRotation = Quaternion.RotateTowards(
+                transform.localRotation,
+                startRotation,
+                returnSpeed * Time.deltaTime
+            );
+        }
+
+        if (Quaternion.Angle(transform.localRotation, startRotation) < 0.1f)
+        {
+            shouldReturn = false;
+        }
+    }
+}
