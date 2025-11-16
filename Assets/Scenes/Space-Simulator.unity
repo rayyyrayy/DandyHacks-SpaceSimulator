@@ -687,18 +687,18 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
   m_TrackScale: 1
@@ -780,9 +780,48 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.035638776, y: 0.027309693, z: 0.20227677}
-  m_Center: {x: 0.0020737879, y: -0.0000000034788934, z: 0.090876065}
---- !u!114 &387563259
+  m_Size: {x: 0.032982916, y: 0.027309693, z: 0.20227677}
+  m_Center: {x: 0.0034018813, y: 0.000000026601446, z: 0.09087606}
+--- !u!59 &387563262
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387563254}
+  serializedVersion: 3
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0.013654844, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_UseSpring: 1
+  m_Spring:
+    spring: 0
+    damper: 2
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_ExtendedLimits: 0
+  m_UseAcceleration: 0
+  m_Limits:
+    min: -2.3763583
+    max: 100.15727
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!114 &387563263
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -791,8 +830,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 387563254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e601cf28e9702c945abe3b90e7f51974, type: 3}
+  m_Script: {fileID: 11500000, guid: c61fc10134a6f1d4ebe8aec3e8920d16, type: 3}
   m_Name: 
+<<<<<<< HEAD
   m_EditorClassIdentifier: Assembly-CSharp::XRLever
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
@@ -944,6 +984,13 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1797986349}
   m_SourcePrefab: {fileID: 100100000, guid: 11ca39471c55a5843a0c8dc3c8f23931, type: 3}
+=======
+  m_EditorClassIdentifier: Assembly-CSharp::LeverAutoReturn
+  grabInteractable: {fileID: 0}
+  returnSpeed: 450
+  thresholdAngle: 60
+  hinge: {fileID: 0}
+>>>>>>> main
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,32 +1593,32 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 084f855c8bf85194e8577e71706422f1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 084f855c8bf85194e8577e71706422f1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 084f855c8bf85194e8577e71706422f1,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 084f855c8bf85194e8577e71706422f1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.86075604
+      value: 0.164
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 084f855c8bf85194e8577e71706422f1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.054
+      value: 1.0695
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 084f855c8bf85194e8577e71706422f1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.51913285
+      value: 0.338
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 084f855c8bf85194e8577e71706422f1,
         type: 3}
@@ -1624,7 +1671,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3936851135138760531, guid: 084f855c8bf85194e8577e71706422f1,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 387563259}
+      addedObject: {fileID: 387563263}
     - targetCorrespondingSourceObject: {fileID: 3936851135138760531, guid: 084f855c8bf85194e8577e71706422f1,
         type: 3}
       insertIndex: -1
@@ -1637,6 +1684,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 387563256}
+    - targetCorrespondingSourceObject: {fileID: 3936851135138760531, guid: 084f855c8bf85194e8577e71706422f1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 387563262}
   m_SourcePrefab: {fileID: 100100000, guid: 084f855c8bf85194e8577e71706422f1, type: 3}
 --- !u!1 &838608156
 GameObject:
@@ -2054,8 +2105,8 @@ Transform:
   m_GameObject: {fileID: 1423820556}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0683, y: -0, z: 0.1783}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalPosition: {x: -0.03902, y: 0, z: 0.17943}
+  m_LocalScale: {x: 0.09915962, y: 0.01, z: 0.012255089}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 387563255}
