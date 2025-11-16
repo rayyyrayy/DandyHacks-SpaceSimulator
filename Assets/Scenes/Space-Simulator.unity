@@ -2508,6 +2508,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lever_1
       objectReference: {fileID: 0}
+    - target: {fileID: 8423656729260430871, guid: 11fea65f5748746cd93b6f5b4ebc7861,
+        type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 75f9b56df0904394aa9587fcc45b84a9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3695,6 +3700,7 @@ MonoBehaviour:
   playerOhResponse: {fileID: 563853227}
   countdownCaption: {fileID: 1342743350}
   countdownMessage: {fileID: 1324268912}
+  countdownEnded: 0
 --- !u!4 &2111949977
 Transform:
   m_ObjectHideFlags: 0
@@ -3830,7 +3836,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 8436c8cf5779f4fbda9ea5a4acee8d73, type: 3}
+  m_Resource: {fileID: 8300000, guid: ec14baa5d25768640a53f616b93f6b66, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
