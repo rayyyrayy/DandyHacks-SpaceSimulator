@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 597012798}
   - component: {fileID: 597012797}
   - component: {fileID: 597012796}
-  - component: {fileID: 597012795}
+  - component: {fileID: 597012799}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -1082,40 +1082,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2099209106}
   m_LocalEulerAnglesHint: {x: 0, y: 91.463, z: 90.49}
---- !u!114 &597012795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597012793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9256b84362a46c4a2c25f673c5e50a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonStabalizePress
-  pressButton: {fileID: 2099209108}
-  onPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 597012795}
-        m_TargetAssemblyTypeName: ButtonStabalizePress, Assembly-CSharp
-        m_MethodName: buttonPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onRelease:
-    m_PersistentCalls:
-      m_Calls: []
-  buttonClip: {fileID: 597012796}
-  buttonIndicator: {fileID: 2099209107}
-  matElement: 2
 --- !u!82 &597012796
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1261,6 +1227,40 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8667025, y: 1.5103564, z: 0.78271335}
   m_Center: {x: -0.0027267367, y: -0.24482393, z: 0.00619213}
+--- !u!114 &597012799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597012793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9256b84362a46c4a2c25f673c5e50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonStabalizePress
+  pressButton: {fileID: 2099209108}
+  onPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 597012799}
+        m_TargetAssemblyTypeName: ButtonStabalizePress, Assembly-CSharp
+        m_MethodName: buttonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRelease:
+    m_PersistentCalls:
+      m_Calls: []
+  buttonClip: {fileID: 597012796}
+  buttonIndicator: {fileID: 2099209107}
+  matElement: 2
 --- !u!1 &650672841
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,6 +3136,11 @@ PrefabInstance:
       objectReference: {fileID: 1237832806}
     - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
         type: 3}
+      propertyPath: midEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
+        type: 3}
       propertyPath: pullDown.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -3146,9 +3151,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
         type: 3}
+      propertyPath: midEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
+        type: 3}
       propertyPath: pullDown.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
+        type: 3}
+      propertyPath: midEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1375737370}
     - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
         type: 3}
       propertyPath: pullDown.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -3166,8 +3181,18 @@ PrefabInstance:
       objectReference: {fileID: 1375737370}
     - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
         type: 3}
+      propertyPath: midEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
+        type: 3}
       propertyPath: pullDown.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
+        type: 3}
+      propertyPath: midEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changeColor
       objectReference: {fileID: 0}
     - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
         type: 3}
@@ -3186,6 +3211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
         type: 3}
+      propertyPath: midEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChangeMaterialColor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
+        type: 3}
       propertyPath: pullDown.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: LeverAutoReturn, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -3193,6 +3223,11 @@ PrefabInstance:
         type: 3}
       propertyPath: startEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ChangeMaterialColor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
+        type: 3}
+      propertyPath: midEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5373473682189844672, guid: 11fea65f5748746cd93b6f5b4ebc7861,
         type: 3}
@@ -3675,7 +3710,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 32dc0666476d219429881b74ac54adf4, type: 3}
+  m_Resource: {fileID: 8300000, guid: 963c4252a0e3a2d47803bd07ca38616d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

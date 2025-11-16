@@ -133,6 +133,7 @@ public class GameManager : MonoBehaviour
         thrustCaption.gameObject.SetActive(true);
         thrustMessage.Play();
         yield return new WaitForSeconds(6);
+        thrustCaption.gameObject.SetActive(false);
         needThrust=true;
     }
 
@@ -146,6 +147,7 @@ public class GameManager : MonoBehaviour
         emergencyOneCaption.gameObject.SetActive(true);
         emergencyOneMessage.Play();
         yield return new WaitForSeconds(7);
+        emergencyOneCaption.gameObject.SetActive(false);
     }
 
 

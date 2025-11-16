@@ -26,8 +26,14 @@ public class ButtonStabalizePress : MonoBehaviour
       if (gameManager.buttonAction==true)
         {
             isPressable=true;
-            buttonIndicator.materials[matElement].color = Color.red;
+
         } 
+        
+        if (gameManager.pulledLever==false&gameManager.buttonAction==true)
+        {
+            buttonIndicator.materials[matElement].color = Color.red;
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)

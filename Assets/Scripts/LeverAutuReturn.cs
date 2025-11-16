@@ -16,6 +16,7 @@ public class LeverAutoReturn : MonoBehaviour
     public UnityEvent pullDown;
 
     public UnityEvent startEvent;
+    public UnityEvent midEvent;
     
     // Private State Variables
     private bool isGrabbed = false;
@@ -98,7 +99,7 @@ public class LeverAutoReturn : MonoBehaviour
             grabInteractable.enabled = true;
             if (myMaterial != null)
             {
-                myMaterial.color = Color.red; // Enabled color
+                midEvent.Invoke();
             }
             isEnabled = true;
         }
