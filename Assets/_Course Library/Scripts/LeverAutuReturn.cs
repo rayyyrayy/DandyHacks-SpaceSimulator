@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Events;
+
 
 public class LeverAutoReturn : MonoBehaviour
 {
     public UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;
     public float returnSpeed = 450f;
-    public float thresholdAngle = 60f;
+    public float thresholdAngle = 90f;
     public HingeJoint hinge;
+    public ChangeMaterialColor cc;
+    public AudioSource audioSouce;
+    public UnityEvent pullDown;
+
 
 
     private bool isGrabbed = false;
@@ -53,13 +59,16 @@ public class LeverAutoReturn : MonoBehaviour
 
         if (currentAngle >= thresholdAngle)
         {
-            shouldReturn = true;
+            shouldReturn = true;      
+
         }
         else
         {
             shouldReturn = false;
         }
     }
+
+
 
     private void Update()
     {
@@ -70,7 +79,11 @@ public class LeverAutoReturn : MonoBehaviour
                 startRotation,
                 returnSpeed * Time.deltaTime
             );
-        }
+            pullDown.Invoke();
+
+            audioSouce.Play();
+
+            }
 
         if (Quaternion.Angle(transform.localRotation, startRotation) < 0.1f)
         {
