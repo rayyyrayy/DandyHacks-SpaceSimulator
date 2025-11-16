@@ -1033,6 +1033,74 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HandController
   gripInput: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
+--- !u!1001 &190055410
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2803044588658842690, guid: 98b56751623a93b468a68a20508df526,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.97737
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803044588658842690, guid: 98b56751623a93b468a68a20508df526,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -34.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803044588658842690, guid: 98b56751623a93b468a68a20508df526,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 223
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803044588658842690, guid: 98b56751623a93b468a68a20508df526,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803044588658842690, guid: 98b56751623a93b468a68a20508df526,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803044588658842690, guid: 98b56751623a93b468a68a20508df526,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803044588658842690, guid: 98b56751623a93b468a68a20508df526,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803044588658842690, guid: 98b56751623a93b468a68a20508df526,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803044588658842690, guid: 98b56751623a93b468a68a20508df526,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803044588658842690, guid: 98b56751623a93b468a68a20508df526,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291492096319883000, guid: 98b56751623a93b468a68a20508df526,
+        type: 3}
+      propertyPath: m_Name
+      value: Sky_Background
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98b56751623a93b468a68a20508df526, type: 3}
 --- !u!1 &323019701
 GameObject:
   m_ObjectHideFlags: 0
@@ -6338,7 +6406,6 @@ MonoBehaviour:
   sparkParticle: {fileID: 400512649}
   shutdownAudio: {fileID: 1390994178}
   parentPlayer: {fileID: 0}
-  flipPlayer: 0
 --- !u!4 &2111949977
 Transform:
   m_ObjectHideFlags: 0
@@ -10018,3 +10085,4 @@ SceneRoots:
   - {fileID: 1196776649}
   - {fileID: 741311262}
   - {fileID: 2111949977}
+  - {fileID: 190055410}
