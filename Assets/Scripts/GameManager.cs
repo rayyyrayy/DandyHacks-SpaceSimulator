@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +23,20 @@ public class GameManager : MonoBehaviour
     public AudioSource playerOhResponse;
     public TextMeshProUGUI countdownCaption;
     public AudioSource countdownMessage;
-    public bool countdownEnded=false;
+    private bool countdownEnded=false;
+    public AudioSource stabalizeMessage;
+    public TextMeshProUGUI stabalizeCaption; 
+    public bool buttonAction=false;
+    public bool pulledLever=false;
+    public AudioSource notbadPlayer;
+    public AudioSource thrustMessage;
+    public TextMeshProUGUI thrustCaption;
+    public bool needThrust=false;
+
+    public bool leverIsPulled=false;
+    public TextMeshProUGUI emergencyOneCaption;
+    public AudioSource emergencyOneMessage;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,6 +45,9 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartGame());
         StartCoroutine(MissionMessage());
         StartCoroutine(StartMission());
+        StartCoroutine(StablizeShip());
+        StartCoroutine(AdjustThruster());
+        StartCoroutine(FirstEmergency());
     }
 
     IEnumerator StartGame()
@@ -87,6 +104,50 @@ public class GameManager : MonoBehaviour
         countdownCaption.gameObject.SetActive(false);
         countdownEnded=true;
 
+    }
+
+    IEnumerator StablizeShip()
+    {
+        while (countdownEnded== false)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(1);
+        stabalizeCaption.gameObject.SetActive(true);
+        stabalizeMessage.Play();
+        yield return new WaitForSeconds(5);
+        stabalizeCaption.gameObject.SetActive(false);
+        buttonAction=true;
+
+    }
+
+    IEnumerator AdjustThruster()
+    {
+        while (pulledLever==false)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(1);
+        notbadPlayer.Play();
+        yield return new WaitForSeconds(5);
+        thrustCaption.gameObject.SetActive(true);
+        thrustMessage.Play();
+        yield return new WaitForSeconds(6);
+        thrustCaption.gameObject.SetActive(false);
+        needThrust=true;
+    }
+
+    IEnumerator FirstEmergency()
+    {
+        while (leverIsPulled==false)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(1);
+        emergencyOneCaption.gameObject.SetActive(true);
+        emergencyOneMessage.Play();
+        yield return new WaitForSeconds(7);
+        emergencyOneCaption.gameObject.SetActive(false);
     }
 
 
