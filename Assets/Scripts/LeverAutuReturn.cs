@@ -12,15 +12,14 @@ public class LeverAutoReturn : MonoBehaviour
     public ChangeMaterialColor cc;
     public AudioSource audioSouce;
     public UnityEvent pullDown;
-
-
-
     private bool isGrabbed = false;
     private Quaternion startRotation;
     private bool shouldReturn;
+    private GameManager gameManager;
 
     private void Awake()
     {
+        gameManager=GameObject.Find("Game Manager").GetComponent<GameManager>();
         if (grabInteractable == null)
             grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
 
@@ -28,6 +27,7 @@ public class LeverAutoReturn : MonoBehaviour
 
         grabInteractable.selectEntered.AddListener(OnGrab);
         grabInteractable.selectExited.AddListener(OnRelease);
+        grabInteractable.enabled=false;
     }
 
     private void OnDestroy()
@@ -68,10 +68,12 @@ public class LeverAutoReturn : MonoBehaviour
         }
     }
 
-
-
     private void Update()
     {
+        if (gameManager.countdownEnded==true)
+        {
+            grabInteractable.enabled=true;
+        }
         if (shouldReturn && !isGrabbed)
         {
             transform.localRotation = Quaternion.RotateTowards(

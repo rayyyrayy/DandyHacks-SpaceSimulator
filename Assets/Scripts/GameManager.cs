@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public AudioSource playerOhResponse;
     public TextMeshProUGUI countdownCaption;
     public AudioSource countdownMessage;
+    public bool countdownEnded=false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -84,6 +85,8 @@ public class GameManager : MonoBehaviour
         countdownCaption.gameObject.SetActive(true);
         yield return new WaitForSeconds(5);
         countdownCaption.gameObject.SetActive(false);
+        countdownEnded=true;
+
     }
 
 
