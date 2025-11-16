@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private bool missionMessageStarted=false;
     public AudioSource missionMessage;
     public TextMeshProUGUI missionMessageCaption;
+    public AudioSource playerNervous;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         introMessage.Play();
         introCaption.gameObject.SetActive(true);
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(6);
         introCaption.gameObject.SetActive(false);
         missionMessageStarted=true;
     }
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
         missionMessageCaption.gameObject.SetActive(true);
         yield return new WaitForSeconds(7);
         missionMessageCaption.gameObject.SetActive(false);
-
+        yield return new WaitForSeconds(1.5f);
+        playerNervous.Play();
     }
 }
