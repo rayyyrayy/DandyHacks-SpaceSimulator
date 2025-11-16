@@ -10,7 +10,8 @@ public class ButtonPress : MonoBehaviour
     public UnityEvent onRelease;
     GameObject presser;
     bool isPressed=false;
-    public AudioSource audioSource;
+    public AudioSource buttonClip;
+    public Renderer buttonIndicator;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,9 +35,10 @@ public class ButtonPress : MonoBehaviour
         
     }
 
-    public void playClip()
+    public void buttonPressed()
     {
-        audioSource.Play();
+        buttonClip.Play();
+        buttonIndicator.materials[2].color = Color.green;
     }
     
 }
