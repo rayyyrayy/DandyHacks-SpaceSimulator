@@ -960,7 +960,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 9e28b3bd692000a4e829e84b04d961dc, type: 3}
+  m_Resource: {fileID: 8300000, guid: 20727caad6f2c422990ec3c84a5a9de9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1548,7 +1548,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u201CWe\u2019ve been planning for an astronaut to explore planet Astraelos.
+  m_text: "\u201CWe\u2019ve been waiting for an astronaut to explore planet Astraelos.
     You\u2019re the only one cleared for this route.\u201D\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 500c8b014e8c041b8982d40b1db00225, type: 2}

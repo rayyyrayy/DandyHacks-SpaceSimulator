@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         startMissionCaption.gameObject.SetActive(false);
         yield return new WaitForSeconds(.5f);
         playerOhResponse.Play();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         startMissionStartedMessage=true;
         
         while (startMissionStarted == false)
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         countdownMessage.Play();
         countdownCaption.gameObject.SetActive(true);
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5);
         countdownCaption.gameObject.SetActive(false);
     }
 
