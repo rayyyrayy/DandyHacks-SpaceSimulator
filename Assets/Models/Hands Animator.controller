@@ -9,20 +9,20 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 8277996828225343573, guid: 11ca39471c55a5843a0c8dc3c8f23931,
+    m_Motion: {fileID: 5494425029658065945, guid: 11ca39471c55a5843a0c8dc3c8f23931,
       type: 3}
     m_Threshold: 0
-    m_Position: {x: 0, y: 0}
+    m_Position: {x: 1, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Grip
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 5494425029658065945, guid: 11ca39471c55a5843a0c8dc3c8f23931,
+    m_Motion: {fileID: 8277996828225343573, guid: 11ca39471c55a5843a0c8dc3c8f23931,
       type: 3}
     m_Threshold: 1
-    m_Position: {x: 1, y: 1}
-    m_TimeScale: 0.01
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Grip
     m_Mirror: 0
@@ -61,7 +61,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hands Animator R
+  m_Name: Hands Animator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Grip
