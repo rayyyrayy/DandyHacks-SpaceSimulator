@@ -12,6 +12,7 @@ public class ButtonPress : MonoBehaviour
     bool isPressed=false;
     public AudioSource buttonClip;
     public Renderer buttonIndicator;
+    [SerializeField] int matElement;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -38,7 +39,7 @@ public class ButtonPress : MonoBehaviour
     public void buttonPressed()
     {
         buttonClip.Play();
-        buttonIndicator.materials[2].color = Color.green;
+        buttonIndicator.materials[matElement].color = Color.green;
     }
     
 }
