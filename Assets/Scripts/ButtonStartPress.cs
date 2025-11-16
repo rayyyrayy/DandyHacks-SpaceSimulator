@@ -5,6 +5,7 @@ using System.Collections;
 public class ButtonStartPress : MonoBehaviour
 {
     public GameObject Everything;
+    public GameObject Building;
     public float speed = 10000.0f;
     public float duration = 5.0f;
 
@@ -57,25 +58,9 @@ public class ButtonStartPress : MonoBehaviour
     public void buttonPressed()
     {
         buttonClip.Play();
-
-        StartCoroutine(MoveUpCoroutine());
-
         buttonIndicator.materials[matElement].color = Color.green;
         gameManager.startMissionStarted=true;
     }
 
-    private IEnumerator MoveUpCoroutine()
-    {
-        float elapsedTime = 0;
-        Vector3 initialPosition = Everything.transform.position;
-
-        yield return new WaitForSeconds(6);
-
-        while (elapsedTime < duration)
-        {
-            Everything.transform.position += new Vector3(0, -1 * speed * Time.deltaTime, 0);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-    }
+   
 }    

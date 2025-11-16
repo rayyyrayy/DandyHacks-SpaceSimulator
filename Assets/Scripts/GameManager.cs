@@ -51,9 +51,13 @@ public class GameManager : MonoBehaviour
     public ParticleSystem sparkParticle;
     public AudioSource shutdownAudio;
     public GameObject parentPlayer;
-    
-    
-
+    public GameObject asteroids;
+    public GameObject plannet1;
+    public GameObject planet2;
+    public GameObject endGame;
+    public GameObject background;
+    public GameObject backgroundMove;
+    public TextMeshProUGUI endgamemessage;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -120,7 +124,10 @@ public class GameManager : MonoBehaviour
         countdownCaption.gameObject.SetActive(true);
         yield return new WaitForSeconds(5);
         countdownCaption.gameObject.SetActive(false);
+        background.SetActive(false);
+        backgroundMove.SetActive(true);
         countdownEnded=true;
+        
 
     }
 
@@ -136,6 +143,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(5);
         stabalizeCaption.gameObject.SetActive(false);
         buttonAction=true;
+        
 
     }
 
@@ -145,14 +153,17 @@ public class GameManager : MonoBehaviour
         {
             yield return null;
         }
+        asteroids.SetActive(true);
         yield return new WaitForSeconds(1);
         notbadPlayer.Play();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         thrustCaption.gameObject.SetActive(true);
         thrustMessage.Play();
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(5);
         thrustCaption.gameObject.SetActive(false);
         needThrust=true;
+        
+        
     }
 
     IEnumerator FirstEmergency()
@@ -161,6 +172,7 @@ public class GameManager : MonoBehaviour
         {
             yield return null;
         }
+        plannet1.SetActive(true);
         yield return new WaitForSeconds(1);
         emergencyOneCaption.gameObject.SetActive(true);
         emergencyOneMessage.Play();
@@ -178,6 +190,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         levererrorCaption.gameObject.SetActive(true);
         fixlever=true;
+        planet2.SetActive(true);
     }
 
     IEnumerator EmegencySequence()
@@ -195,6 +208,12 @@ public class GameManager : MonoBehaviour
         shutdownCaption.gameObject.SetActive(true);
         sparkParticle.Play();
         shutdownAudio.Play();
+        yield return new WaitForSeconds(3);
+        endGame.gameObject.SetActive(true);
+        shutdownCaption.gameObject.SetActive(false);
+        endgamemessage.gameObject.SetActive(true);
+
+
 
         
     }
