@@ -37,6 +37,23 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI emergencyOneCaption;
     public AudioSource emergencyOneMessage;
 
+    public AudioSource mistakesMessage;
+    public AudioSource losingYouMesssage;
+    public TextMeshProUGUI mistakesCaption;
+    public TextMeshProUGUI losingYouCaption;
+    public TextMeshProUGUI levererrorCaption;
+    public TextMeshProUGUI buttonErrorCaption;
+    public TextMeshProUGUI shutdownCaption;
+    public bool fixlever=false;
+    public bool leverErrorPulled=false;
+    public AudioSource buttonFailure;
+    public ParticleSystem smokeparticle;
+    public ParticleSystem sparkParticle;
+    public AudioSource shutdownAudio;
+    public GameObject parentPlayer;
+    
+    
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -48,6 +65,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StablizeShip());
         StartCoroutine(AdjustThruster());
         StartCoroutine(FirstEmergency());
+        StartCoroutine(EmegencySequence());
     }
 
     IEnumerator StartGame()
@@ -148,7 +166,40 @@ public class GameManager : MonoBehaviour
         emergencyOneMessage.Play();
         yield return new WaitForSeconds(7);
         emergencyOneCaption.gameObject.SetActive(false);
+        mistakesCaption.gameObject.SetActive(true);
+        mistakesMessage.Play();
+        yield return new WaitForSeconds(4);
+        mistakesCaption.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1);
+        losingYouCaption.gameObject.SetActive(true);
+        losingYouMesssage.Play();
+        yield return new WaitForSeconds(3.5f);
+        losingYouCaption.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1);
+        levererrorCaption.gameObject.SetActive(true);
+        fixlever=true;
     }
+
+    IEnumerator EmegencySequence()
+    {
+        while (leverErrorPulled==false)
+        {
+            yield return null;
+        }
+        buttonErrorCaption.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        buttonFailure.Play();
+        smokeparticle.Play();
+        yield return new WaitForSeconds(3);
+        buttonErrorCaption.gameObject.SetActive(false);
+        shutdownCaption.gameObject.SetActive(true);
+        sparkParticle.Play();
+        shutdownAudio.Play();
+
+        
+    }
+
+   
 
 
 }
