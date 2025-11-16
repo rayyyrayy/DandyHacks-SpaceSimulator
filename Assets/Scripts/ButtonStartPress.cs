@@ -1,11 +1,7 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
-using UnityEngine.Rendering;
-using Unity.Mathematics;
-using NUnit.Framework;
 
-public class ButtonPress : MonoBehaviour
+public class ButtonStartPress : MonoBehaviour
 {
     public GameObject pressButton;
     public UnityEvent onPress;
@@ -25,7 +21,7 @@ public class ButtonPress : MonoBehaviour
 
     void Update()
     {
-      if (gameManager.missionMessageStarted==true)
+      if (gameManager.startMissionStartedMessage==true)
         {
             isPressable=true;
         } 
