@@ -6189,7 +6189,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Simulation Ended......
 
-    Thanks for playing ./space_re:ACT'
+    Thanks for playing ./space_re:ACT
+
+    Break
+    Gravity'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 500c8b014e8c041b8982d40b1db00225, type: 2}
   m_sharedMaterial: {fileID: -6674944201535329505, guid: 500c8b014e8c041b8982d40b1db00225,
