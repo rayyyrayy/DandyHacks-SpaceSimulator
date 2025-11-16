@@ -97,7 +97,7 @@ public class LeverAutoReturn : MonoBehaviour
         if (gameManager.needThrust && !isEnabled)
         {
             grabInteractable.enabled = true;
-            if (myMaterial != null)
+            if (gameManager.leverIsPulled==false)
             {
                 midEvent.Invoke();
             }
