@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour
     public GameObject background;
     public GameObject backgroundMove;
     public TextMeshProUGUI endgamemessage;
+    bool gameOver=false;
+    public bool fallingEror=false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -159,7 +161,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(4);
         thrustCaption.gameObject.SetActive(true);
         thrustMessage.Play();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4.5f);
         thrustCaption.gameObject.SetActive(false);
         needThrust=true;
         
@@ -200,25 +202,38 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         buttonErrorCaption.gameObject.SetActive(true);
+        yield return new WaitForSeconds(10);
+        smokeparticle.Play();
+        buttonFailure.Play();
         yield return new WaitForSeconds(1);
         buttonFailure.Play();
-        smokeparticle.Play();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
+        buttonFailure.Play();
         buttonErrorCaption.gameObject.SetActive(false);
-        shutdownCaption.gameObject.SetActive(true);
-        sparkParticle.Play();
+        yield return new WaitForSeconds(2);
+        StartCoroutine(flashingError());
+        fallingEror=true;
         shutdownAudio.Play();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(6);
+        gameOver=true;
         endGame.gameObject.SetActive(true);
         shutdownCaption.gameObject.SetActive(false);
         endgamemessage.gameObject.SetActive(true);
-
-
-
         
     }
 
-   
-
+    IEnumerator flashingError()
+    {
+        shutdownCaption.gameObject.SetActive(true);
+        sparkParticle.Play();
+        yield return new WaitForSeconds(2);
+        while (gameOver==false)
+        {
+            shutdownCaption.gameObject.SetActive(true);
+            yield return new WaitForSeconds(.5f);
+            shutdownCaption.gameObject.SetActive(false);
+            yield return new WaitForSeconds(.5f);
+        }
+    }
 
 }
