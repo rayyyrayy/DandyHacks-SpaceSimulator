@@ -6,6 +6,7 @@ Two-time award-winning, immersive Virtual Reality (VR) game, created by our team
 
 💼 Winner: Best Business Potential Award
 
+
 Inspiration
 
 As avid VR/AR game players, athletes, and CS students, we saw VR has the potential to not only entertain, but the train. While current VR applications exist to help develop and maintain coordination and quick reactions, most on the market serve little purpose other than sight-seeing. Those that serve as clinical tools lack engagement, and frame recovery as a chore, not self-improvement.
