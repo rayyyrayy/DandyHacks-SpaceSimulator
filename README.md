@@ -3,6 +3,7 @@
 Two-time award-winning, immersive Virtual Reality (VR) game, created by our team of 4 against a competitive pool of 64 participants during the 42-hour DandyHacks 2025 competition. The project secured:
 
 🥇 1st Place: Creative Immersive Technology Category 
+
 💼 Winner: Best Business Potential Award
 
 Inspiration
