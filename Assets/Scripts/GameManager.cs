@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     public AudioSource shutdownAudio;
     public GameObject parentPlayer;
     public GameObject asteroids;
-    public GameObject plannet1;
+    public GameObject planet1;
     public GameObject planet2;
     public GameObject endGame;
     public GameObject background;
@@ -65,6 +65,9 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        asteroids.SetActive(false);
+        planet1.SetActive(false);
+        planet2.SetActive(false);
         StartCoroutine(StartGame());
         StartCoroutine(MissionMessage());
         StartCoroutine(StartMission());
@@ -174,7 +177,7 @@ public class GameManager : MonoBehaviour
         {
             yield return null;
         }
-        plannet1.SetActive(true);
+        planet1.SetActive(true);
         yield return new WaitForSeconds(1);
         emergencyOneCaption.gameObject.SetActive(true);
         emergencyOneMessage.Play();

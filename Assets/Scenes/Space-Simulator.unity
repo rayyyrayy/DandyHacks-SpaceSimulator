@@ -7428,7 +7428,7 @@ MonoBehaviour:
   shutdownAudio: {fileID: 1390994178}
   parentPlayer: {fileID: 0}
   asteroids: {fileID: 1976400132}
-  plannet1: {fileID: 1244942910}
+  planet1: {fileID: 1244942910}
   planet2: {fileID: 2080251198}
   endGame: {fileID: 2100185417}
   background: {fileID: 3291492096173868298}
